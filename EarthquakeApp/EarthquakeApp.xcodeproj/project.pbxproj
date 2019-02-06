@@ -12,9 +12,11 @@
 		421D75CD22022850000E237F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D75CB22022850000E237F /* Main.storyboard */; };
 		421D75CF22022850000E237F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421D75CE22022850000E237F /* Assets.xcassets */; };
 		421D75D222022850000E237F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D75D022022850000E237F /* LaunchScreen.storyboard */; };
+		98CA72DB9CF64EA4CED3C456 /* Pods_EarthquakeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6046205B07CEC0581B4CC1D /* Pods_EarthquakeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11248EAB1F6096978C7DDB32 /* Pods-EarthquakeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		421D75C422022850000E237F /* EarthquakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421D75C722022850000E237F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		421D75C922022850000E237F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		421D75CE22022850000E237F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		421D75D122022850000E237F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		421D75D322022850000E237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6046205B07CEC0581B4CC1D /* Pods_EarthquakeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthquakeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C71FC9229E450A7E380259 /* Pods-EarthquakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CA72DB9CF64EA4CED3C456 /* Pods_EarthquakeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1766DF96694B07F7AD887F33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11248EAB1F6096978C7DDB32 /* Pods-EarthquakeApp.debug.xcconfig */,
+				D3C71FC9229E450A7E380259 /* Pods-EarthquakeApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		421D75BB22022850000E237F = {
 			isa = PBXGroup;
 			children = (
 				421D75C622022850000E237F /* EarthquakeApp */,
 				421D75C522022850000E237F /* Products */,
+				1766DF96694B07F7AD887F33 /* Pods */,
+				CECC193A736C6B98AF8601C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = EarthquakeApp;
 			sourceTree = "<group>";
 		};
+		CECC193A736C6B98AF8601C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6046205B07CEC0581B4CC1D /* Pods_EarthquakeApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 421D75D622022850000E237F /* Build configuration list for PBXNativeTarget "EarthquakeApp" */;
 			buildPhases = (
+				441101C369824625CDDDD78C /* [CP] Check Pods Manifest.lock */,
 				421D75C022022850000E237F /* Sources */,
 				421D75C122022850000E237F /* Frameworks */,
 				421D75C222022850000E237F /* Resources */,
+				F9668A5064EBF3DC428326E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		441101C369824625CDDDD78C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EarthquakeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9668A5064EBF3DC428326E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		421D75C022022850000E237F /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		421D75D722022850000E237F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11248EAB1F6096978C7DDB32 /* Pods-EarthquakeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +373,7 @@
 		};
 		421D75D822022850000E237F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C71FC9229E450A7E380259 /* Pods-EarthquakeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
