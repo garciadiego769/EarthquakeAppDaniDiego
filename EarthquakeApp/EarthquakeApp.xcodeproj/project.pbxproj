@@ -12,6 +12,7 @@
 		421D75CD22022850000E237F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D75CB22022850000E237F /* Main.storyboard */; };
 		421D75CF22022850000E237F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421D75CE22022850000E237F /* Assets.xcassets */; };
 		421D75D222022850000E237F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D75D022022850000E237F /* LaunchScreen.storyboard */; };
+		4254A271221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4254A270221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift */; };
 		98CA72DB9CF64EA4CED3C456 /* Pods_EarthquakeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6046205B07CEC0581B4CC1D /* Pods_EarthquakeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		421D75CE22022850000E237F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		421D75D122022850000E237F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		421D75D322022850000E237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4254A270221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTerremotos1HTableViewController.swift; sourceTree = "<group>"; };
 		C6046205B07CEC0581B4CC1D /* Pods_EarthquakeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EarthquakeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C71FC9229E450A7E380259 /* Pods-EarthquakeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeApp/Pods-EarthquakeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				421D75CE22022850000E237F /* Assets.xcassets */,
 				421D75D022022850000E237F /* LaunchScreen.storyboard */,
 				421D75D322022850000E237F /* Info.plist */,
+				4254A270221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift */,
 			);
 			path = EarthquakeApp;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4254A271221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift in Sources */,
 				421D75CA22022850000E237F /* ViewController.swift in Sources */,
 				421D75C822022850000E237F /* AppDelegate.swift in Sources */,
 			);

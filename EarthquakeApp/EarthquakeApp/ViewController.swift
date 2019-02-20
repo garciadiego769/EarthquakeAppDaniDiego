@@ -42,7 +42,7 @@ class ViewController: UIViewController {
                     /* LO SIGUIENTE FUNCIONA (Y LO PRINTAMOS MAS ABAJO) */
                     /* self.fecha = (xml.weatherForecast.forecasts.forecast[0].forecastDateText.text!) */
                     
-                    print(xml)
+                    (xml)
                     for terremoto in xml["q:quakeml","eventParameters","event"] {
                         /* print("Día: \(forecast.attributes["forecastData"]!)") */
                         print(terremoto["description","text"].text)
