@@ -11,6 +11,7 @@
 		4209A93D22270FA4006752ED /* ListaTerremotos1STableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A93C22270FA4006752ED /* ListaTerremotos1STableViewController.swift */; };
 		4209A93F22270FCD006752ED /* ListaTerremotos1MTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A93E22270FCD006752ED /* ListaTerremotos1MTableViewController.swift */; };
 		4209A941222718BC006752ED /* TerremotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A940222718BC006752ED /* TerremotoTableViewCell.swift */; };
+		4209A9452227280F006752ED /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4209A9442227280F006752ED /* MapaViewController.swift */; };
 		421D75C822022850000E237F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D75C722022850000E237F /* AppDelegate.swift */; };
 		421D75CA22022850000E237F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D75C922022850000E237F /* ViewController.swift */; };
 		421D75CD22022850000E237F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421D75CB22022850000E237F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		4209A93C22270FA4006752ED /* ListaTerremotos1STableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTerremotos1STableViewController.swift; sourceTree = "<group>"; };
 		4209A93E22270FCD006752ED /* ListaTerremotos1MTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTerremotos1MTableViewController.swift; sourceTree = "<group>"; };
 		4209A940222718BC006752ED /* TerremotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerremotoTableViewCell.swift; sourceTree = "<group>"; };
+		4209A9442227280F006752ED /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		421D75C422022850000E237F /* EarthquakeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		421D75C722022850000E237F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		421D75C922022850000E237F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				4209A93C22270FA4006752ED /* ListaTerremotos1STableViewController.swift */,
 				4209A93E22270FCD006752ED /* ListaTerremotos1MTableViewController.swift */,
 				4209A940222718BC006752ED /* TerremotoTableViewCell.swift */,
+				4209A9442227280F006752ED /* MapaViewController.swift */,
 			);
 			path = EarthquakeApp;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				4209A941222718BC006752ED /* TerremotoTableViewCell.swift in Sources */,
 				4209A93F22270FCD006752ED /* ListaTerremotos1MTableViewController.swift in Sources */,
 				4254A271221DCF7100A526D3 /* ListaTerremotos1HTableViewController.swift in Sources */,
+				4209A9452227280F006752ED /* MapaViewController.swift in Sources */,
 				4209A93D22270FA4006752ED /* ListaTerremotos1STableViewController.swift in Sources */,
 				421D75CA22022850000E237F /* ViewController.swift in Sources */,
 				421D75C822022850000E237F /* AppDelegate.swift in Sources */,
