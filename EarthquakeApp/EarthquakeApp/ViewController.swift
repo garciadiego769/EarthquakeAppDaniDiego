@@ -31,10 +31,14 @@ class ViewController: UIViewController {
         
         /* Alamofire.request("http://opendata.euskadi.eus/contenidos/prevision_tiempo/met_forecast/opendata/met_forecast.xml") */
         /* HEMOS CAMBIADO LA DIRECCIÓN DE 'opendata' (linea anterior) a 'www' (linea siguiente) PARA QUE NO DE PROBLEMAS CON EL CERTIFICADO SSL */
-        Alamofire.request("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.quakeml")
+        
+        
+        /*Alamofire.request("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.quakeml")
             .responseData { response in
                 if let data = response.data {
-                    let xml = XML.parse(data)
+                    let xml = XML.parse(data)*/
+        
+        
                     /* for app in xml.feed.weatherForecast {
                      print(app.title.text!)
                      } */
@@ -42,10 +46,15 @@ class ViewController: UIViewController {
                     /* LO SIGUIENTE FUNCIONA (Y LO PRINTAMOS MAS ABAJO) */
                     /* self.fecha = (xml.weatherForecast.forecasts.forecast[0].forecastDateText.text!) */
                     
-                    (xml)
-                    for terremoto in xml["q:quakeml","eventParameters","event"] {
+                    /*(xml)
+                    for terremoto in xml["q:quakeml","eventParameters","event"] {*/
+                    
+                    
                         /* print("Día: \(forecast.attributes["forecastData"]!)") */
-                        print(terremoto["description","text"].text)
+                        
+                        
+                        /* print(terremoto["description","text"].text)*/
+                        
                         
                         /*for terremoto in terremoto.cityForecastDataList.cityForecastData {
                             print(" Localidad: \(cityForecastData.attributes["cityName"]!)")
@@ -53,9 +62,11 @@ class ViewController: UIViewController {
                             print(" Máxima: \(cityForecastData.tempMax.text!)º")
                             print(" Mínima: \(cityForecastData.tempMin.text!)º")
                             print("--------------")*/
-                        }
+                        
+                        
+                        /*}
                     }
-                }
+                }*/
                 
                         
     }

@@ -31,14 +31,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8h-de-Ghg">
                                         <rect key="frame" x="53" y="101" width="112" height="30"/>
                                         <state key="normal" title="Terremotos ayer"/>
+                                        <connections>
+                                            <segue destination="Ylc-6A-B3Y" kind="show" id="98o-6e-0Gd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5F1-Y5-Ufx">
                                         <rect key="frame" x="0.0" y="202" width="218" height="30"/>
                                         <state key="normal" title="Terremotos en la ultima semana"/>
+                                        <connections>
+                                            <segue destination="GZr-Ad-Jyc" kind="show" id="0DI-gx-GOJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xg-Zc-Ewq">
                                         <rect key="frame" x="12" y="303" width="194" height="30"/>
                                         <state key="normal" title="Terremotos en el ultimo mes"/>
+                                        <connections>
+                                            <segue destination="fNY-o1-YVh" kind="show" id="7Md-qo-7dh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -56,22 +65,55 @@
             </objects>
             <point key="canvasLocation" x="1766" y="43"/>
         </scene>
-        <!--Lista Terremotos1H Table View Controller-->
+        <!--Terremotos en la Última Hora-->
         <scene sceneID="5p9-TT-9WZ">
             <objects>
-                <tableViewController id="j3E-MY-v0O" customClass="ListaTerremotos1HTableViewController" customModule="EarthquakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Terremotos en la Última Hora" id="j3E-MY-v0O" customClass="ListaTerremotos1HTableViewController" customModule="EarthquakeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6kz-ZY-Qrf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" id="1X0-CC-qHk">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="1X0-CC-qHk" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1X0-CC-qHk" id="9Fn-fn-5ca">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-jg-bAm">
+                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mU-oM-6PY">
+                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="p0M-jg-bAm" firstAttribute="top" secondItem="9Fn-fn-5ca" secondAttribute="topMargin" id="0WM-l5-HPm"/>
+                                        <constraint firstItem="7mU-oM-6PY" firstAttribute="trailing" secondItem="9Fn-fn-5ca" secondAttribute="trailingMargin" constant="10" id="4im-cZ-O54"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7mU-oM-6PY" secondAttribute="trailing" id="BX6-Bc-Z0u"/>
+                                        <constraint firstItem="p0M-jg-bAm" firstAttribute="trailing" secondItem="9Fn-fn-5ca" secondAttribute="trailingMargin" constant="10" id="Diy-uZ-WLh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7mU-oM-6PY" secondAttribute="bottom" constant="10" id="HzS-Kr-Gib"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="p0M-jg-bAm" secondAttribute="trailing" id="PNk-qF-sAg"/>
+                                        <constraint firstItem="7mU-oM-6PY" firstAttribute="top" secondItem="p0M-jg-bAm" secondAttribute="bottom" constant="10" id="V8c-cz-GKj"/>
+                                        <constraint firstItem="p0M-jg-bAm" firstAttribute="leading" secondItem="9Fn-fn-5ca" secondAttribute="leadingMargin" constant="10" id="a6K-9B-qg9"/>
+                                        <constraint firstItem="p0M-jg-bAm" firstAttribute="leading" secondItem="9Fn-fn-5ca" secondAttribute="leadingMargin" id="fbz-8e-nso"/>
+                                        <constraint firstItem="7mU-oM-6PY" firstAttribute="top" secondItem="p0M-jg-bAm" secondAttribute="bottom" constant="8" id="ivS-LE-QXN"/>
+                                        <constraint firstItem="p0M-jg-bAm" firstAttribute="top" secondItem="9Fn-fn-5ca" secondAttribute="topMargin" constant="10" id="nVR-KD-lhq"/>
+                                        <constraint firstItem="7mU-oM-6PY" firstAttribute="leading" secondItem="9Fn-fn-5ca" secondAttribute="leadingMargin" id="pGL-R5-Yke"/>
+                                        <constraint firstItem="7mU-oM-6PY" firstAttribute="leading" secondItem="9Fn-fn-5ca" secondAttribute="leadingMargin" constant="10" id="tGo-Vo-Un6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="magnitud" destination="7mU-oM-6PY" id="yMt-gP-kta"/>
+                                    <outlet property="titulo" destination="p0M-jg-bAm" id="Cru-CV-80J"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,6 +125,189 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOU-nY-0DA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2712.8000000000002" y="42.728635682158924"/>
+        </scene>
+        <!--Terremotos en el Último Mes-->
+        <scene sceneID="j8r-2N-6pI">
+            <objects>
+                <tableViewController title="Terremotos en el Último Mes" id="fNY-o1-YVh" customClass="ListaTerremotos1MTableViewController" customModule="EarthquakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YMU-Xw-wg4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="je4-m4-5wd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="je4-m4-5wd" id="Wfh-21-gZM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNH-uE-uar">
+                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKp-Sy-05y">
+                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FKp-Sy-05y" firstAttribute="top" secondItem="BNH-uE-uar" secondAttribute="bottom" constant="8" id="3eP-Tb-ddr"/>
+                                        <constraint firstItem="BNH-uE-uar" firstAttribute="leading" secondItem="Wfh-21-gZM" secondAttribute="leadingMargin" id="4E1-pw-AlD"/>
+                                        <constraint firstItem="BNH-uE-uar" firstAttribute="top" secondItem="Wfh-21-gZM" secondAttribute="topMargin" constant="10" id="6DO-Zq-5dW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="FKp-Sy-05y" secondAttribute="trailing" id="7KN-0i-4dH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FKp-Sy-05y" secondAttribute="bottom" constant="10" id="8A8-7H-oRA"/>
+                                        <constraint firstItem="BNH-uE-uar" firstAttribute="trailing" secondItem="Wfh-21-gZM" secondAttribute="trailingMargin" constant="10" id="AhG-CL-mLi"/>
+                                        <constraint firstItem="FKp-Sy-05y" firstAttribute="trailing" secondItem="Wfh-21-gZM" secondAttribute="trailingMargin" constant="10" id="ICk-pL-IC2"/>
+                                        <constraint firstItem="FKp-Sy-05y" firstAttribute="leading" secondItem="Wfh-21-gZM" secondAttribute="leadingMargin" constant="10" id="OhV-YY-tEe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BNH-uE-uar" secondAttribute="trailing" id="RPz-3Y-Zmy"/>
+                                        <constraint firstItem="FKp-Sy-05y" firstAttribute="top" secondItem="BNH-uE-uar" secondAttribute="bottom" constant="10" id="Rog-3f-XDA"/>
+                                        <constraint firstItem="BNH-uE-uar" firstAttribute="leading" secondItem="Wfh-21-gZM" secondAttribute="leadingMargin" constant="10" id="RzA-hR-dSq"/>
+                                        <constraint firstItem="FKp-Sy-05y" firstAttribute="leading" secondItem="Wfh-21-gZM" secondAttribute="leadingMargin" id="uR0-Ip-bZR"/>
+                                        <constraint firstItem="BNH-uE-uar" firstAttribute="top" secondItem="Wfh-21-gZM" secondAttribute="topMargin" id="vZG-63-58G"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="magnitud" destination="FKp-Sy-05y" id="Vk3-uB-gMU"/>
+                                    <outlet property="titulo" destination="BNH-uE-uar" id="pg9-ho-Beh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fNY-o1-YVh" id="ADO-En-oJq"/>
+                            <outlet property="delegate" destination="fNY-o1-YVh" id="r7d-zb-DlC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDw-Is-u9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="963"/>
+        </scene>
+        <!--Terremotos en la Última Semana-->
+        <scene sceneID="CdS-mM-AD6">
+            <objects>
+                <tableViewController title="Terremotos en la Última Semana" id="GZr-Ad-Jyc" customClass="ListaTerremotos1STableViewController" customModule="EarthquakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Rl-Gx-NfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="d7w-AU-TNd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7w-AU-TNd" id="c4g-iG-tWp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-8M-wAH">
+                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-S4-slV">
+                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Eh-8M-wAH" firstAttribute="top" secondItem="c4g-iG-tWp" secondAttribute="topMargin" constant="10" id="9DC-ad-FfK"/>
+                                        <constraint firstItem="Sgi-S4-slV" firstAttribute="top" secondItem="1Eh-8M-wAH" secondAttribute="bottom" constant="10" id="C98-pz-LD5"/>
+                                        <constraint firstItem="Sgi-S4-slV" firstAttribute="leading" secondItem="c4g-iG-tWp" secondAttribute="leadingMargin" id="L7l-1s-r1W"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sgi-S4-slV" secondAttribute="trailing" id="OUF-ks-ePJ"/>
+                                        <constraint firstItem="1Eh-8M-wAH" firstAttribute="leading" secondItem="c4g-iG-tWp" secondAttribute="leadingMargin" constant="10" id="QJ1-DJ-jUj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1Eh-8M-wAH" secondAttribute="trailing" id="SJl-nn-RaC"/>
+                                        <constraint firstItem="1Eh-8M-wAH" firstAttribute="leading" secondItem="c4g-iG-tWp" secondAttribute="leadingMargin" id="ZF5-qX-m8e"/>
+                                        <constraint firstItem="1Eh-8M-wAH" firstAttribute="top" secondItem="c4g-iG-tWp" secondAttribute="topMargin" id="Zsx-4f-5nh"/>
+                                        <constraint firstItem="Sgi-S4-slV" firstAttribute="top" secondItem="1Eh-8M-wAH" secondAttribute="bottom" constant="8" id="d0k-nA-HVl"/>
+                                        <constraint firstItem="Sgi-S4-slV" firstAttribute="trailing" secondItem="c4g-iG-tWp" secondAttribute="trailingMargin" constant="10" id="ohg-FG-QHJ"/>
+                                        <constraint firstItem="1Eh-8M-wAH" firstAttribute="trailing" secondItem="c4g-iG-tWp" secondAttribute="trailingMargin" constant="10" id="pcj-JJ-dDM"/>
+                                        <constraint firstItem="Sgi-S4-slV" firstAttribute="leading" secondItem="c4g-iG-tWp" secondAttribute="leadingMargin" constant="10" id="uh3-gt-LdF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Sgi-S4-slV" secondAttribute="bottom" constant="10" id="vZS-b1-vVP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="magnitud" destination="Sgi-S4-slV" id="tBA-OW-3kg"/>
+                                    <outlet property="titulo" destination="1Eh-8M-wAH" id="yYf-nI-mY6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GZr-Ad-Jyc" id="KQf-Qw-hSD"/>
+                            <outlet property="delegate" destination="GZr-Ad-Jyc" id="Yv6-hm-niA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qm5-Bs-MUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="817"/>
+        </scene>
+        <!--Terremotos en el Último Día-->
+        <scene sceneID="lfc-wV-gcE">
+            <objects>
+                <tableViewController title="Terremotos en el Último Día" id="Ylc-6A-B3Y" customClass="ListaTerremotos24HTableViewController" customModule="EarthquakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hHi-eO-sS1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="FMK-JK-gKO" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FMK-JK-gKO" id="FO7-FQ-gQP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-mV-8bK">
+                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daG-tj-Pax">
+                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oc4-mV-8bK" firstAttribute="leading" secondItem="FO7-FQ-gQP" secondAttribute="leadingMargin" id="1ZM-Yn-gGc"/>
+                                        <constraint firstItem="oc4-mV-8bK" firstAttribute="trailing" secondItem="FO7-FQ-gQP" secondAttribute="trailingMargin" constant="10" id="8r1-en-iqV"/>
+                                        <constraint firstItem="oc4-mV-8bK" firstAttribute="top" secondItem="FO7-FQ-gQP" secondAttribute="topMargin" constant="10" id="AgK-YI-s4X"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="daG-tj-Pax" secondAttribute="trailing" id="O2r-uM-Np3"/>
+                                        <constraint firstItem="daG-tj-Pax" firstAttribute="top" secondItem="oc4-mV-8bK" secondAttribute="bottom" constant="10" id="Q7P-0U-ZqK"/>
+                                        <constraint firstItem="daG-tj-Pax" firstAttribute="trailing" secondItem="FO7-FQ-gQP" secondAttribute="trailingMargin" constant="10" id="QyJ-Sb-8RX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="oc4-mV-8bK" secondAttribute="trailing" id="TX2-Eq-YTb"/>
+                                        <constraint firstItem="oc4-mV-8bK" firstAttribute="leading" secondItem="FO7-FQ-gQP" secondAttribute="leadingMargin" constant="10" id="bUB-QC-1xg"/>
+                                        <constraint firstItem="daG-tj-Pax" firstAttribute="top" secondItem="oc4-mV-8bK" secondAttribute="bottom" constant="8" id="cJj-CR-stb"/>
+                                        <constraint firstItem="daG-tj-Pax" firstAttribute="leading" secondItem="FO7-FQ-gQP" secondAttribute="leadingMargin" id="hy2-10-aYd"/>
+                                        <constraint firstItem="oc4-mV-8bK" firstAttribute="top" secondItem="FO7-FQ-gQP" secondAttribute="topMargin" id="jam-oF-W6f"/>
+                                        <constraint firstItem="daG-tj-Pax" firstAttribute="leading" secondItem="FO7-FQ-gQP" secondAttribute="leadingMargin" constant="10" id="klQ-KV-Md7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="daG-tj-Pax" secondAttribute="bottom" constant="10" id="txf-Id-cGl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="magnitud" destination="daG-tj-Pax" id="QFw-Or-M9H"/>
+                                    <outlet property="titulo" destination="oc4-mV-8bK" id="eec-dl-bhs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ylc-6A-B3Y" id="s9x-Sf-n5U"/>
+                            <outlet property="delegate" destination="Ylc-6A-B3Y" id="RRx-La-Hvg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74l-uI-voK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3068" y="766"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HUp-qe-FCM">
