@@ -10,10 +10,16 @@ import UIKit
 import Alamofire
 import SwiftyXMLParser
 
+struct Terremoto {
+    var lugar: String
+    var magnitud: String
+    var latitud: Double
+    var longitud: Double
+}
+
 class ListaTerremotos24HTableViewController: UITableViewController {
-    var terremotos = [String]()
-    var magnitud = [String]()
-    var nuevoTerremoto: String = ""
+    var terremotos = [Terremoto]()
+    var nuevoTerremoto: Terremoto!
     
     override func viewDidLoad() {
         
@@ -25,8 +31,13 @@ class ListaTerremotos24HTableViewController: UITableViewController {
                     let xml = XML.parse(data)
                     
                     for terremoto in xml["q:quakeml","eventParameters","event"] {
-                        self.terremotos.append(terremoto["description","text"].text ?? "?")
-                        self.magnitud.append(terremoto["magnitude","mag","value"].text ?? "?")
+                        let lugar = terremoto["description","text"].text ?? "?"
+                        let magnitud = terremoto["magnitude","mag","value"].text ?? "?"
+                        let latitud =  terremoto["origin","latitude","value"].text ?? "?"
+                        let longitud = terremoto["origin","longitude","value"].text ?? "?"
+                        
+                        self.terremotos.append(Terremoto(lugar: lugar, magnitud: magnitud, latitud: Double(latitud)!, longitud: Double(longitud)!))
+                        
                     }
                     
                     self.tableView.reloadData()
@@ -40,8 +51,6 @@ class ListaTerremotos24HTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -59,11 +68,28 @@ class ListaTerremotos24HTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "terremotos", for: indexPath) as! TerremotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "terremotos24H", for: indexPath) as! TerremotoTableViewCell
         
-        cell.titulo.text = "Lugar: " + terremotos[indexPath.row]
-        cell.magnitud.text = "Magnitud: " + magnitud[indexPath.row]
+        if terremotos.count == 0 {
+            cell.titulo.text = "No se han registrado terremotos"
+        }
+        else {
+            cell.titulo.text = "Lugar: " + terremotos[indexPath.row].lugar
+        }
+        
+        //cell.titulo.text = "Lugar: " + terremotos[indexPath.row]
+        cell.magnitud.text = "Magnitud: " + terremotos[indexPath.row].magnitud
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mostrarTerremotos24h" {
+            let destino = segue.destination as! MapaViewController
+            
+            destino.terremoto = self.terremotos[self.tableView.indexPathForSelectedRow!.row]
+            
+        }
     }
     
     

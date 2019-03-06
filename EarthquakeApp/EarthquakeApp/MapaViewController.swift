@@ -7,20 +7,41 @@
 //
 
 import UIKit
+
 import MapKit
+import SafariServices
+
+//import AEXML
+import Alamofire
 
 
 class MapaViewController: UIViewController {
+    var latitud: Double!
+    var longitud: Double!
+    var terremoto: Terremoto!
+    
     @IBOutlet weak var Mapa: MKMapView!
+    
     let anotacion = MKPointAnnotation()
     
+    let regionRadius: CLLocationDistance = 1500000
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        Mapa.setRegion(coordinateRegion, animated: true)
+    }
+    
     override func viewDidLoad() {
-        let localizacionInicial = CLLocation(latitude: 21.282778, longitude: -157.829444)
         super.viewDidLoad()
-        anotacion.coordinate = CLLocationCoordinate2D(latitude: 122.81, longitude: 38.81)
         
-        Mapa.addAnnotation(anotacion)
-        anotacion.title = "Hola que tal"
+        // Centrar el mapa
+        let initialLocation = CLLocation(latitude: terremoto.latitud, longitude: terremoto.longitud)
+        centerMapOnLocation(location: initialLocation)
+        
+        anotacion.coordinate = initialLocation.coordinate
+        
+        self.Mapa.addAnnotation(anotacion)
+        anotacion.title = terremoto.lugar
         
         //anotacion.coordinate = center
         // Do any additional setup after loading the view.

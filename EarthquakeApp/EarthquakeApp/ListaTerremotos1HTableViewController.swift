@@ -10,25 +10,35 @@ import UIKit
 import Alamofire
 import SwiftyXMLParser
 
+/*struct Terremoto1H{
+    var lugar: String
+    var magnitud: String
+    var latitud: Double
+    var longitud: Double
+}*/
+
 class ListaTerremotos1HTableViewController: UITableViewController {
-    var terremotos = [String]()
-    var magnitud = [String]()
-    var nuevoTerremoto: String = ""
+    var terremotos = [Terremoto]()
+    var nuevoTerremoto: Terremoto!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        Alamofire.request("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.quakeml")
+        Alamofire.request("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.quakeml")
             .responseData { response in
                 if let data = response.data {
                     let xml = XML.parse(data)
 
                     for terremoto in xml["q:quakeml","eventParameters","event"] {
-                        self.terremotos.append(terremoto["description","text"].text ?? "?")
-                        self.magnitud.append(terremoto["magnitude","mag","value"].text ?? "?")
+                        let lugar = terremoto["description","text"].text ?? "?"
+                        let magnitud = terremoto["magnitude","mag","value"].text ?? "?"
+                        let latitud =  terremoto["origin","latitude","value"].text ?? "?"
+                        let longitud = terremoto["origin","longitude","value"].text ?? "?"
+                        
+                        self.terremotos.append(Terremoto(lugar: lugar, magnitud: magnitud, latitud: Double(latitud)!, longitud: Double(longitud)!))
+                        
                     }
-                    
                     self.tableView.reloadData()
                 }
         }
@@ -59,57 +69,29 @@ class ListaTerremotos1HTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "terremotos", for: indexPath) as! TerremotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "terremotos1h", for: indexPath) as! TerremotoTableViewCell
         
-        cell.titulo.text = "Lugar: " + terremotos[indexPath.row]
-        cell.magnitud.text = "Magnitud: " + magnitud[indexPath.row]
+        if terremotos.count == 0 {
+            cell.titulo.text = "No se han registrado terremotos"
+        }
+        else {
+            cell.titulo.text = "Lugar: " + terremotos[indexPath.row].lugar
+        }
+        
+        //cell.titulo.text = "Lugar: " + terremotos[indexPath.row]
+        cell.magnitud.text = "Magnitud: " + terremotos[indexPath.row].magnitud
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "mostrarTerremotos1h" {
+            let destino = segue.destination as! MapaViewController
+            
+            destino.terremoto = self.terremotos[self.tableView.indexPathForSelectedRow!.row]
+            
+        
+            
+        }
     }
-    */
-
 }

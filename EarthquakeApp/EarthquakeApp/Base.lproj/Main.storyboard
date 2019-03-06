@@ -74,33 +74,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="1X0-CC-qHk" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="terremotos1h" rowHeight="88" id="1X0-CC-qHk" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1X0-CC-qHk" id="9Fn-fn-5ca">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-jg-bAm">
-                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="293" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mU-oM-6PY">
-                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <rect key="frame" x="26" y="40" width="275" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYw-n2-Eor">
-                                            <rect key="frame" x="256" y="40" width="86" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Ver en Mapa"/>
-                                            <connections>
-                                                <segue destination="Pin-i3-a5a" kind="show" id="Cmp-8B-zI1"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="p0M-jg-bAm" firstAttribute="top" secondItem="9Fn-fn-5ca" secondAttribute="topMargin" id="0WM-l5-HPm"/>
@@ -123,6 +115,7 @@
                                 <connections>
                                     <outlet property="magnitud" destination="7mU-oM-6PY" id="yMt-gP-kta"/>
                                     <outlet property="titulo" destination="p0M-jg-bAm" id="Cru-CV-80J"/>
+                                    <segue destination="Pin-i3-a5a" kind="show" identifier="mostrarTerremotos1h" id="30E-o6-5TQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -163,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9a-HS-h7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3516" y="-99"/>
+            <point key="canvasLocation" x="2998" y="904"/>
         </scene>
         <!--Terremotos en el Último Mes-->
         <scene sceneID="j8r-2N-6pI">
@@ -174,21 +167,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="je4-m4-5wd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="terremotos1M" rowHeight="88" id="je4-m4-5wd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="je4-m4-5wd" id="Wfh-21-gZM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNH-uE-uar">
-                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <rect key="frame" x="26" y="11" width="283" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKp-Sy-05y">
-                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <rect key="frame" x="16" y="40" width="293" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -213,6 +206,7 @@
                                 <connections>
                                     <outlet property="magnitud" destination="FKp-Sy-05y" id="Vk3-uB-gMU"/>
                                     <outlet property="titulo" destination="BNH-uE-uar" id="pg9-ho-Beh"/>
+                                    <segue destination="Pin-i3-a5a" kind="show" identifier="mostrarTerremotos1M" id="6Jz-KK-9pw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -224,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDw-Is-u9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="963"/>
+            <point key="canvasLocation" x="1542" y="888"/>
         </scene>
         <!--Terremotos en la Última Semana-->
         <scene sceneID="CdS-mM-AD6">
@@ -235,21 +229,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="d7w-AU-TNd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="terremotos1S" rowHeight="88" id="d7w-AU-TNd" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7w-AU-TNd" id="c4g-iG-tWp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Eh-8M-wAH">
-                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="293" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-S4-slV">
-                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <rect key="frame" x="26" y="40" width="283" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -274,6 +268,7 @@
                                 <connections>
                                     <outlet property="magnitud" destination="Sgi-S4-slV" id="tBA-OW-3kg"/>
                                     <outlet property="titulo" destination="1Eh-8M-wAH" id="yYf-nI-mY6"/>
+                                    <segue destination="Pin-i3-a5a" kind="show" identifier="mostrarTerremotos1S" id="EfN-9Y-zp2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -285,7 +280,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qm5-Bs-MUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="817"/>
+            <point key="canvasLocation" x="2289" y="863"/>
         </scene>
         <!--Terremotos en el Último Día-->
         <scene sceneID="lfc-wV-gcE">
@@ -296,21 +291,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="terremotos" rowHeight="88" id="FMK-JK-gKO" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="terremotos24H" rowHeight="88" id="FMK-JK-gKO" customClass="TerremotoTableViewCell" customModule="EarthquakeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FMK-JK-gKO" id="FO7-FQ-gQP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-mV-8bK">
-                                            <rect key="frame" x="16" y="11" width="353" height="21"/>
+                                            <rect key="frame" x="26" y="11" width="283" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daG-tj-Pax">
-                                            <rect key="frame" x="26" y="40" width="343" height="20.5"/>
+                                            <rect key="frame" x="26" y="40" width="283" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -335,6 +330,7 @@
                                 <connections>
                                     <outlet property="magnitud" destination="daG-tj-Pax" id="QFw-Or-M9H"/>
                                     <outlet property="titulo" destination="oc4-mV-8bK" id="eec-dl-bhs"/>
+                                    <segue destination="Pin-i3-a5a" kind="show" identifier="mostrarTerremotos24h" id="emX-9H-PpP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -346,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74l-uI-voK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3068" y="766"/>
+            <point key="canvasLocation" x="3551" y="43"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HUp-qe-FCM">
@@ -367,4 +363,7 @@
             <point key="canvasLocation" x="702" y="43"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="emX-9H-PpP"/>
+    </inferredMetricsTieBreakers>
 </document>
