@@ -38,16 +38,12 @@ class MapaViewController: UIViewController {
         let initialLocation = CLLocation(latitude: terremoto.latitud, longitude: terremoto.longitud)
         centerMapOnLocation(location: initialLocation)
         
+        // Poner la chincheta
         anotacion.coordinate = initialLocation.coordinate
         
         self.Mapa.addAnnotation(anotacion)
         anotacion.title = terremoto.lugar
-        
-        //anotacion.coordinate = center
-        // Do any additional setup after loading the view.
     }
-    
-
     
     /*
     // MARK: - Navigation

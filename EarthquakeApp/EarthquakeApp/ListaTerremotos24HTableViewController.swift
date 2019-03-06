@@ -10,13 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyXMLParser
 
-struct Terremoto {
-    var lugar: String
-    var magnitud: String
-    var latitud: Double
-    var longitud: Double
-}
-
 class ListaTerremotos24HTableViewController: UITableViewController {
     var terremotos = [Terremoto]()
     var nuevoTerremoto: Terremoto!
@@ -37,15 +30,12 @@ class ListaTerremotos24HTableViewController: UITableViewController {
                         let longitud = terremoto["origin","longitude","value"].text ?? "?"
                         
                         self.terremotos.append(Terremoto(lugar: lugar, magnitud: magnitud, latitud: Double(latitud)!, longitud: Double(longitud)!))
-                        
                     }
                     
                     self.tableView.reloadData()
                 }
         }
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -62,6 +52,7 @@ class ListaTerremotos24HTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -88,9 +79,7 @@ class ListaTerremotos24HTableViewController: UITableViewController {
             let destino = segue.destination as! MapaViewController
             
             destino.terremoto = self.terremotos[self.tableView.indexPathForSelectedRow!.row]
-            
         }
     }
-    
     
 }
